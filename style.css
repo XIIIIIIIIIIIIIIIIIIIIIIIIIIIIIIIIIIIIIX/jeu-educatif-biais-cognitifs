@@ -1,0 +1,174 @@
+:root {
+      --primary: #5271ff;
+      --accent: #ffb142;
+      --bg: #f6f8fc;
+      --white: #fff;
+      --gray: #94a3b8;
+      --shadow: 0 6px 32px 0 rgba(82,113,255,0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      min-height: 100vh;
+      background: var(--bg);
+      font-family: 'Nunito', sans-serif;
+      color: #222;
+    }
+    .container {
+      max-width: 410px;
+      background: var(--white);
+      margin: 48px auto;
+      box-shadow: var(--shadow);
+      border-radius: 21px;
+      padding: 36px 30px 30px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .header i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    .title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .score {
+      background: var(--primary);
+      color: var(--white);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 700;
+      align-self: flex-end;
+      margin-bottom: 12px;
+    }
+    .phrase-box {
+      background: #f2f3fa;
+      border-radius: 13px;
+      padding: 25px 18px;
+      font-size: 1.18rem;
+      text-align: center;
+      min-height: 70px;
+      font-weight: 600;
+    }
+    .biais-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 10px 0 8px 0;
+    }
+    .biais-btn {
+      background: #f8fafe;
+      border: none;
+      border-radius: 11px;
+      padding: 14px 8px 12px 8px;
+      color: var(--primary);
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      cursor: pointer;
+      transition: background 0.17s, box-shadow 0.17s;
+      box-shadow: none;
+    }
+    .biais-btn.selected,
+    .biais-btn:active {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 8px 16px 0 rgba(82,113,255,0.06);
+    }
+    .biais-btn i {
+      font-size: 1.22rem;
+      margin-bottom: 1px;
+    }
+    .confirm-btn {
+      background: var(--accent);
+      color: #2a2a2a;
+      font-weight: 800;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 0;
+      font-size: 1.14rem;
+      transition: background 0.18s;
+      cursor: pointer;
+      margin-top: 3px;
+      box-shadow: 0 3px 12px 0 rgba(255,177,66,0.10);
+    }
+    .confirm-btn:disabled {
+      background: #efe7d8;
+      color: #b6b6b6;
+      cursor: not-allowed;
+      opacity: 0.85;
+      box-shadow: none;
+    }
+    .feedback {
+      padding: 15px 10px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.13rem;
+      border-radius: 10px;
+      margin: 11px 0 5px 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      justify-content: center;
+      min-height: 38px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.23s;
+    }
+    .feedback.success {
+      color: #43a047;
+      background: #e9fadd;
+      opacity: 1;
+    }
+    .feedback.fail {
+      color: #ea0a41;
+      background: #fce9f0;
+      opacity: 1;
+    }
+    .next-btn {
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 0;
+      font-size: 1.07rem;
+      margin-top: 8px;
+      cursor: pointer;
+      opacity: 1;
+      transition: opacity 0.15s;
+      box-shadow: 0 2px 10px 0 rgba(82,113,255,0.06);
+    }
+    .next-btn:disabled {
+      opacity: 0.73;
+      cursor: not-allowed;
+      background: #b2c0f7;
+    }
+    .end-message {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+    @media (max-width: 480px) {
+      .container {
+        max-width: 97vw;
+        padding: 26px 7vw 20px 7vw;
+        margin: 19px auto;
+      }
+      .title { font-size: 1.19rem;}
+      .phrase-box { font-size: 1rem; padding: 18px 8px;}
+    }
